@@ -1,3 +1,4 @@
+import 'package:final_flutter_project/features/login/view.dart';
 import 'package:flutter/material.dart';
 import 'package:final_flutter_project/features/splash_screen/view.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const SplashScreen(),
+      home: const LoginScreen(),
     );
   }
 }
