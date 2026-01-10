@@ -5,14 +5,16 @@ class AuthButton extends StatelessWidget {
   const AuthButton({
     super.key,
     required this.name,
+    required this.onPressedAction,
   });
 
   final String name;
+  final onPressedAction;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: () { onPressedAction(); },
         style: ElevatedButton.styleFrom(
             padding: EdgeInsets.all(10),
             backgroundColor: primaryColor,
