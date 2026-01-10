@@ -3,6 +3,7 @@ import '../widgets/discount_offer.dart';
 import 'package:final_flutter_project/features/widgets/custom_input_field.dart';
 import '../widgets/auth_button.dart';
 import 'package:final_flutter_project/features/widgets/footer.dart';
+import 'package:final_flutter_project/features/register/view.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -48,7 +49,7 @@ class LoginScreen extends StatelessWidget {
                     ],
                   ),
                   AuthButton(name: "Login",),
-                  Footer(firstPart: "Don't have an account? ", secondPart: "Sign up",)
+                  Footer(firstPart: "Don't have an account? ", secondPart: "Sign up", destination: RegisterScreen(),)
                 ],
               ),
             ),

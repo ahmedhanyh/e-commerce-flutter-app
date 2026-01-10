@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter/gestures.dart';
+import 'package:flutter/gestures.dart';
 
-/// Used in LoginView and SignUpView
+/// Used in LoginScreen and RegisterScreen
 class Footer extends StatelessWidget {
   const Footer({
     super.key,
     required this.firstPart,
     required this.secondPart,
-    // required this.destination,
+    required this.destination,
   });
 
   final String firstPart;
   final String secondPart;
-  // final Widget destination;
+  final Widget destination;
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +34,11 @@ class Footer extends StatelessWidget {
               decoration: TextDecoration.underline,
 
             ),
-            // recognizer: TapGestureRecognizer()..onTap = () {
-            //   Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-            //     return destination;
-            //   }));
-            // },
+            recognizer: TapGestureRecognizer()..onTap = () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return destination;
+              }));
+            },
           ),
         ],
       ),
