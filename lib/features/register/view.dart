@@ -30,6 +30,7 @@ class RegisterScreen extends StatelessWidget {
         builder: (context, state) {
           final cubit = context.read<RegisterCubit>();
           return Scaffold(
+            backgroundColor: Colors.white,
             body: SafeArea(
               child: Padding(
                 padding: EdgeInsets.all(20),
