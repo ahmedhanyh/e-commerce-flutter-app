@@ -29,7 +29,20 @@ class RegisterScreen extends StatelessWidget {
         },
         builder: (context, state) {
           final cubit = context.read<RegisterCubit>();
-          return Scaffold(
+          if (state is RegisterLoading) {
+            return Scaffold(
+              body: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 20,
+                  children: [
+                    CircularProgressIndicator(),
+                    Text("Registering new user..."),
+                  ],
+                ),
+              ),
+            );
+          } return Scaffold(
             backgroundColor: Colors.white,
             body: SafeArea(
               child: Padding(

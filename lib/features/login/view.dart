@@ -29,7 +29,20 @@ class LoginScreen extends StatelessWidget {
         },
         builder: (context, state) {
           final cubit = context.read<LoginCubit>();
-          return Scaffold(
+          if (state is LoginLoading) {
+            return Scaffold(
+              body: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 20,
+                  children: [
+                    CircularProgressIndicator(),
+                    Text("Logging in..."),
+                  ],
+                ),
+              ),
+            );
+          } return Scaffold(
             backgroundColor: Colors.white,
             body: SafeArea(
               child: Padding(
