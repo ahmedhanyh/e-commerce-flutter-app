@@ -1,10 +1,11 @@
-import 'package:final_flutter_project/features/login/view.dart';
-import 'package:final_flutter_project/features/profile/cubit.dart';
-import 'package:final_flutter_project/features/profile/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:final_flutter_project/features/login/view.dart';
+import 'package:final_flutter_project/features/profile/cubit.dart';
+import 'package:final_flutter_project/features/profile/state.dart';
+import 'package:final_flutter_project/features/widgets/loading_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -33,18 +34,7 @@ class ProfileScreen extends StatelessWidget {
         builder: (context, state) {
           final cubit = context.read<ProfileCubit>();
           if (state is LogoutLoading) {
-            return Scaffold(
-              body: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  spacing: 20,
-                  children: [
-                    CircularProgressIndicator(),
-                    Text("Logging out..."),
-                  ],
-                ),
-              ),
-            );
+            return LoadingScreen(message: "Logging out...");
           } return Scaffold(
             backgroundColor: Colors.white,
             body: SafeArea(

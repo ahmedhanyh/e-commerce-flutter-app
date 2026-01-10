@@ -1,7 +1,8 @@
-import 'package:final_flutter_project/features/login/cubit.dart';
-import 'package:final_flutter_project/features/login/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:final_flutter_project/features/login/cubit.dart';
+import 'package:final_flutter_project/features/login/state.dart';
+import 'package:final_flutter_project/features/widgets/loading_screen.dart';
 import '../widgets/discount_offer.dart';
 import 'package:final_flutter_project/features/widgets/custom_input_field.dart';
 import '../widgets/auth_button.dart';
@@ -30,18 +31,7 @@ class LoginScreen extends StatelessWidget {
         builder: (context, state) {
           final cubit = context.read<LoginCubit>();
           if (state is LoginLoading) {
-            return Scaffold(
-              body: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  spacing: 20,
-                  children: [
-                    CircularProgressIndicator(),
-                    Text("Logging in..."),
-                  ],
-                ),
-              ),
-            );
+            return LoadingScreen(message: "Logging in...");
           } return Scaffold(
             backgroundColor: Colors.white,
             body: SafeArea(

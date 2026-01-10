@@ -2,6 +2,7 @@ import 'package:final_flutter_project/features/register/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:final_flutter_project/features/register/cubit.dart';
+import '../widgets/loading_screen.dart';
 import '../widgets/discount_offer.dart';
 import 'package:final_flutter_project/features/widgets/custom_input_field.dart';
 import '../widgets/auth_button.dart';
@@ -30,18 +31,7 @@ class RegisterScreen extends StatelessWidget {
         builder: (context, state) {
           final cubit = context.read<RegisterCubit>();
           if (state is RegisterLoading) {
-            return Scaffold(
-              body: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  spacing: 20,
-                  children: [
-                    CircularProgressIndicator(),
-                    Text("Registering new user..."),
-                  ],
-                ),
-              ),
-            );
+            return LoadingScreen(message: "Registering new user...");
           } return Scaffold(
             backgroundColor: Colors.white,
             body: SafeArea(
