@@ -75,7 +75,7 @@ class ProfileScreen extends StatelessWidget {
                                         color: Colors.black,
                                       )
                                   ),),
-                                trailing: Icon(Icons.arrow_forward),
+                                trailing: SvgPicture.asset("assets/icons/profile_arrow_forward.svg"),
                                 tileColor: Color(0xffF8F7F7),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)
@@ -92,7 +92,7 @@ class ProfileScreen extends StatelessWidget {
                                         color: Colors.black,
                                       )
                                   ),),
-                                trailing: Icon(Icons.arrow_forward),
+                                trailing: SvgPicture.asset("assets/icons/profile_arrow_forward.svg"),
                                 tileColor: Color(0xffF8F7F7),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)
@@ -109,7 +109,7 @@ class ProfileScreen extends StatelessWidget {
                                         color: Colors.black,
                                       )
                                   ),),
-                                trailing: Icon(Icons.arrow_forward),
+                                trailing: SvgPicture.asset("assets/icons/profile_arrow_forward.svg"),
                                 tileColor: Color(0xffF8F7F7),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)
@@ -126,7 +126,7 @@ class ProfileScreen extends StatelessWidget {
                                         color: Colors.black,
                                       )
                                   ),),
-                                trailing: Icon(Icons.arrow_forward),
+                                trailing: SvgPicture.asset("assets/icons/profile_arrow_forward.svg"),
                                 tileColor: Color(0xffF8F7F7),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)
@@ -143,7 +143,7 @@ class ProfileScreen extends StatelessWidget {
                                         color: Colors.black,
                                       )
                                   ),),
-                                trailing: Icon(Icons.arrow_forward),
+                                trailing: SvgPicture.asset("assets/icons/profile_arrow_forward.svg"),
                                 tileColor: Color(0xffF8F7F7),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)
