@@ -12,7 +12,6 @@ class HomeCubit extends Cubit<HomeState> {
           endPoint: "https://dummyjson.com/products");
       final categoriesResponse = await DioHelper.getRequest(
           endPoint: "https://dummyjson.com/products/categories");
-      print(categoriesResponse.data[0]);
       emit(HomeLoaded(productsResponse.data["products"], categoriesResponse.data));
     } catch(e) {
       emit(HomeFailure(e.toString()));

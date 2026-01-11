@@ -1,13 +1,14 @@
-import 'package:final_flutter_project/features/widgets/loading_screen.dart';
+import 'package:final_flutter_project/features/category_item/view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../widgets/product_grid_item.dart';
+import '../widgets/product_item.dart';
 
-class ProductsScreen extends StatelessWidget {
-  const ProductsScreen({super.key, required this.products});
+class ListScreen extends StatelessWidget {
+  const ListScreen({super.key, required this.title, required this.items, this.isCategories = false});
 
-  final products;
+  final String title;
+  final items;
+  final bool isCategories;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class ProductsScreen extends StatelessWidget {
           ),
         ),
         title: Text(
-          "Products",
+          title,
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
@@ -47,13 +48,16 @@ class ProductsScreen extends StatelessWidget {
         elevation: 0,
         scrolledUnderElevation: 0,
       ),
-      // TODO: flutter_staggered_grid_view
       body: Padding(
         padding: const EdgeInsets.fromLTRB(12, 20, 12, 20),
         child: GridView.builder(
-          itemCount: products.length,
+          itemCount: items.length,
           itemBuilder: (context, index) {
-            return ProductGridItem(product: products[index]);
+            if (isCategories) {
+              return CategoryItem(category: items[index]);
+            } else {
+              return ProductItem(product: items[index]);
+            }
           },
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,

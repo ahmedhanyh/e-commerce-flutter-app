@@ -5,9 +5,9 @@ import 'package:final_flutter_project/core/resources/app_colors.dart';
 import 'package:final_flutter_project/features/home/cubit.dart';
 import 'package:final_flutter_project/features/home/state.dart';
 import 'package:final_flutter_project/features/widgets/discount_offer.dart';
-import 'package:final_flutter_project/features/widgets/product_grid_item.dart';
+import 'package:final_flutter_project/features/widgets/product_item.dart';
+import '../category_item/view.dart';
 import '../products/view.dart';
-import '../widgets/category_grid_item.dart';
 import '../widgets/loading_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -108,7 +108,7 @@ class HomeScreen extends StatelessWidget {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                         builder: (context) {
-                                          return ProductsScreen(products: state.products);
+                                          return ListScreen(title: "Products", items: state.products);
                                         }
                                     )
                                   );
@@ -134,7 +134,7 @@ class HomeScreen extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 return Container(
                                   width: 180,
-                                  child: ProductGridItem(product: state.products[index], showAddBtn: false,),
+                                  child: ProductItem(product: state.products[index], showAddBtn: false,),
                                 );
                               },
                             ),
@@ -156,7 +156,13 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(builder: (context) {
+                                      return ListScreen(title: "Categories", items: state.categories, isCategories: true,);
+                                    })
+                                  );
+                                },
                                 child: Text(
                                   "See all",
                                   style: TextStyle(
@@ -178,7 +184,7 @@ class HomeScreen extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 return Container(
                                   width: 180,
-                                  child: CategoryGridItem(category: state.categories[index]),
+                                  child: CategoryItem(category: state.categories[index]),
                                 );
                               },
                             ),

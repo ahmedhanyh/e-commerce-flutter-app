@@ -2,8 +2,8 @@ import 'package:final_flutter_project/features/product_details/view.dart';
 import 'package:flutter/material.dart';
 import 'package:final_flutter_project/core/resources/app_colors.dart';
 
-class ProductGridItem extends StatefulWidget {
-  const ProductGridItem({
+class ProductItem extends StatefulWidget {
+  const ProductItem({
     super.key,
     required this.product,
     this.showAddBtn = true,
@@ -13,10 +13,10 @@ class ProductGridItem extends StatefulWidget {
   final bool showAddBtn;
 
   @override
-  State<ProductGridItem> createState() => _ProductGridItemState();
+  State<ProductItem> createState() => _ProductItemState();
 }
 
-class _ProductGridItemState extends State<ProductGridItem> {
+class _ProductItemState extends State<ProductItem> {
   bool favorite = false;
 
   @override
