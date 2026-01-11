@@ -15,17 +15,17 @@ class RegisterCubit extends Cubit<RegisterState> {
   void register() async {
     try {
       emit(RegisterLoading());
+      if (emailController.text.isEmpty
+          || passwordController.text.isEmpty
+          || passwordConfirmationController.text.isEmpty) {
+        return emit(RegisterFailure("One or more fields are empty"));
+      } else if (passwordController.text != passwordConfirmationController.text) {
+        return emit(RegisterFailure("Passwords don't match"));
+      }
       await firebase_auth.createUserWithEmailAndPassword(
           email: emailController.text,
           password: passwordController.text
       );
-      if (emailController.text.isEmpty
-       || passwordController.text.isEmpty
-       || passwordConfirmationController.text.isEmpty) {
-        emit(RegisterFailure("One or more fields are empty"));
-      } else if (passwordController.text == passwordConfirmationController.text) {
-        emit(RegisterFailure("Passwords don't match"));
-      }
       emit(RegisterSuccess());
     } on FirebaseAuthException catch(e) {
       emit(RegisterFailure(e.message));

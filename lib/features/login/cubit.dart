@@ -14,6 +14,10 @@ class LoginCubit extends Cubit<LoginState> {
   void login() async {
     try {
       emit(LoginLoading());
+      if (emailController.text.isEmpty
+       || passwordController.text.isEmpty) {
+        return emit(LoginFailure("One or more fields are empty"));
+      }
       await firebase_auth.signInWithEmailAndPassword(
           email: emailController.text,
           password: passwordController.text
