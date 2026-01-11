@@ -1,3 +1,4 @@
+import 'package:final_flutter_project/features/navigation_bar/view.dart';
 import 'package:final_flutter_project/features/register/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,6 +22,13 @@ class RegisterScreen extends StatelessWidget {
           if (state is RegisterSuccess) {
             ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text("Registration successful!"), backgroundColor: Colors.green,)
+            );
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (context) {
+                  return NavBar();
+                },
+              ),
             );
           } else if (state is RegisterFailure) {
             ScaffoldMessenger.of(context).showSnackBar(

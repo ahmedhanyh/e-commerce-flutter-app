@@ -19,10 +19,16 @@ class RegisterCubit extends Cubit<RegisterState> {
           email: emailController.text,
           password: passwordController.text
       );
+      if (emailController.text.isEmpty
+       || passwordController.text.isEmpty
+       || passwordConfirmationController.text.isEmpty) {
+        emit(RegisterFailure("One or more fields are empty"));
+      } else if (passwordController.text == passwordConfirmationController.text) {
+        emit(RegisterFailure("Passwords don't match"));
+      }
       emit(RegisterSuccess());
     } on FirebaseAuthException catch(e) {
       emit(RegisterFailure(e.message));
-      // emit(RegisterFailure(e.code));  // TODO: use e.code to generate a more user-friendly message
     } catch(e) {
       emit(RegisterFailure(e.toString()));
     }
