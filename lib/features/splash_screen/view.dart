@@ -13,12 +13,11 @@ class SplashScreen extends StatelessWidget {
         padding: EdgeInsets.fromLTRB(0, 0, 0, 48),
         child: Text(
           "Loading...",
-          style: GoogleFonts.arimo(
-            textStyle: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w700,
-              color: Colors.white,
-            ),
+          style: TextStyle(
+            fontFamily: "Arimo",
+            fontSize: 24,
+            fontWeight: FontWeight.w700,
+            color: Colors.white,
           ),
         ),
       ),

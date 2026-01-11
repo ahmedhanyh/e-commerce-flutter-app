@@ -35,20 +35,16 @@ class HomeScreen extends StatelessWidget {
                           leading: CircleAvatar(radius: 25),
                           title: Text(
                             "Hello!",
-                            style: GoogleFonts.poppins(
-                              textStyle: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w300,
-                              ),
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w300,
                             ),
                           ),
                           subtitle: Text(
                             "Ahmed Hany",
-                            style: GoogleFonts.poppins(
-                              textStyle: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                              ),
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                           trailing: Container(
@@ -76,23 +72,17 @@ class HomeScreen extends StatelessWidget {
                             child: SvgPicture.asset("assets/icons/search.svg"),
                           ),
                           hintText: "Search here",
-                          hintStyle: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: Color(0xff9B9999),
-                            ),
+                          hintStyle: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xff9B9999),
                           ),
                           border: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: secondaryColor
-                            ),
+                            borderSide: BorderSide(color: secondaryColor),
                             borderRadius: BorderRadius.circular(30),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: secondaryColor
-                            ),
+                            borderSide: BorderSide(color: secondaryColor),
                             borderRadius: BorderRadius.circular(30),
                           ),
                         ),
@@ -106,22 +96,18 @@ class HomeScreen extends StatelessWidget {
                             children: [
                               Text(
                                 "Featured",
-                                style: GoogleFonts.poppins(
-                                  textStyle: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black,
-                                  ),
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black,
                                 ),
                               ),
                               Text(
                                 "See all",
-                                style: GoogleFonts.poppins(
-                                  textStyle: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                    color: primaryColor,
-                                  ),
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
+                                  color: primaryColor,
                                 ),
                               ),
                             ],
@@ -131,12 +117,14 @@ class HomeScreen extends StatelessWidget {
                             child: ListView.separated(
                               scrollDirection: Axis.horizontal,
                               itemCount: state.products.length,
-                              separatorBuilder: (context, i) => SizedBox(width: 12,),
+                              separatorBuilder: (context, i) =>
+                                  SizedBox(width: 12),
                               itemBuilder: (context, index) {
                                 return Container(
                                   width: 180,
                                   child: ProductGridItem(
-                                    imageURL: "${state.products[index]["images"][0]}",
+                                    imageURL:
+                                        "${state.products[index]["images"][0]}",
                                     title: "${state.products[index]["title"]}",
                                     price: "${state.products[index]["price"]}",
                                   ),
@@ -154,22 +142,18 @@ class HomeScreen extends StatelessWidget {
                             children: [
                               Text(
                                 "Categories",
-                                style: GoogleFonts.poppins(
-                                  textStyle: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black,
-                                  ),
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black,
                                 ),
                               ),
                               Text(
                                 "See all",
-                                style: GoogleFonts.poppins(
-                                  textStyle: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                    color: primaryColor,
-                                  ),
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
+                                  color: primaryColor,
                                 ),
                               ),
                             ],
@@ -179,12 +163,14 @@ class HomeScreen extends StatelessWidget {
                             child: ListView.separated(
                               scrollDirection: Axis.horizontal,
                               itemCount: state.products.length,
-                              separatorBuilder: (context, i) => SizedBox(width: 12,),
+                              separatorBuilder: (context, i) =>
+                                  SizedBox(width: 12),
                               itemBuilder: (context, index) {
                                 return Container(
                                   width: 180,
                                   child: ProductGridItem(
-                                    imageURL: "${state.products[index]["images"][0]}",
+                                    imageURL:
+                                        "${state.products[index]["images"][0]}",
                                     title: "${state.products[index]["title"]}",
                                     price: "${state.products[index]["price"]}",
                                   ),

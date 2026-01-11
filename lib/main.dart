@@ -1,3 +1,4 @@
+import 'package:final_flutter_project/features/product_details/view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:final_flutter_project/firebase_options.dart';
@@ -24,8 +25,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Final Flutter Project',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const ProductsScreen(),
+      theme: ThemeData(
+        fontFamily: "Poppins",
+        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+      ),
+      home: const ProductDetailsScreen(),
     );
   }
 }

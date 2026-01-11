@@ -22,33 +22,29 @@ class DiscountOffer extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Get Winter Discount",
-                style: GoogleFonts.poppins(
-                  textStyle: TextStyle(
+                Text(
+                  "Get Winter Discount",
+                  style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
                   ),
-                )),
+                ),
                 Text(
                   "20% Off",
-                  style: GoogleFonts.poppins(
-                    textStyle: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  )
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
                 ),
                 Text(
                   "For Children",
-                  style: GoogleFonts.poppins(
-                    textStyle: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  )
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
