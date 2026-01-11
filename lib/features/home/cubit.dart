@@ -9,10 +9,11 @@ class HomeCubit extends Cubit<HomeState> {
     try {
       emit(HomeLoading());
       final productsResponse = await DioHelper.getRequest(
-          endPoint: "https://api.escuelajs.co/api/v1/products");
-      // final categoriesResponse = await DioHelper.getRequest(
-      //     endPoint: "https://api.escuelajs.co/api/v1/categories");
-      emit(HomeLoaded(productsResponse.data));
+          endPoint: "https://dummyjson.com/products");
+      final categoriesResponse = await DioHelper.getRequest(
+          endPoint: "https://dummyjson.com/products/categories");
+      print(categoriesResponse.data[0]);
+      emit(HomeLoaded(productsResponse.data["products"], categoriesResponse.data));
     } catch(e) {
       emit(HomeFailure(e.toString()));
     }

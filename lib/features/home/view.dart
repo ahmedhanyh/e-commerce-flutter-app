@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:final_flutter_project/core/resources/app_colors.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:final_flutter_project/features/home/cubit.dart';
 import 'package:final_flutter_project/features/home/state.dart';
 import 'package:final_flutter_project/features/widgets/discount_offer.dart';
 import 'package:final_flutter_project/features/widgets/product_grid_item.dart';
+import '../products/view.dart';
+import '../widgets/category_grid_item.dart';
 import '../widgets/loading_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -102,12 +103,23 @@ class HomeScreen extends StatelessWidget {
                                   color: Colors.black,
                                 ),
                               ),
-                              Text(
-                                "See all",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: primaryColor,
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) {
+                                          return ProductsScreen(products: state.products);
+                                        }
+                                    )
+                                  );
+                                },
+                                child: Text(
+                                  "See all",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                    color: primaryColor,
+                                  ),
                                 ),
                               ),
                             ],
@@ -122,12 +134,7 @@ class HomeScreen extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 return Container(
                                   width: 180,
-                                  child: ProductGridItem(
-                                    imageURL:
-                                        "${state.products[index]["images"][0]}",
-                                    title: "${state.products[index]["title"]}",
-                                    price: "${state.products[index]["price"]}",
-                                  ),
+                                  child: ProductGridItem(product: state.products[index], showAddBtn: false,),
                                 );
                               },
                             ),
@@ -148,12 +155,15 @@ class HomeScreen extends StatelessWidget {
                                   color: Colors.black,
                                 ),
                               ),
-                              Text(
-                                "See all",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: primaryColor,
+                              GestureDetector(
+                                onTap: () {},
+                                child: Text(
+                                  "See all",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                    color: primaryColor,
+                                  ),
                                 ),
                               ),
                             ],
@@ -162,18 +172,13 @@ class HomeScreen extends StatelessWidget {
                             height: 180,
                             child: ListView.separated(
                               scrollDirection: Axis.horizontal,
-                              itemCount: state.products.length,
+                              itemCount: state.categories.length,
                               separatorBuilder: (context, i) =>
                                   SizedBox(width: 12),
                               itemBuilder: (context, index) {
                                 return Container(
                                   width: 180,
-                                  child: ProductGridItem(
-                                    imageURL:
-                                        "${state.products[index]["images"][0]}",
-                                    title: "${state.products[index]["title"]}",
-                                    price: "${state.products[index]["price"]}",
-                                  ),
+                                  child: CategoryGridItem(category: state.categories[index]),
                                 );
                               },
                             ),
