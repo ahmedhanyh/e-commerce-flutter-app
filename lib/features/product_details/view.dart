@@ -92,57 +92,54 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 16,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  Column(
+                    spacing: 10,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          spacing: 8,
-                          children: [
-                            Text(
-                              "${widget.product["title"]}",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                                overflow: TextOverflow.ellipsis
-                              ),
-                            ),
-                            Row(
-                              spacing: 4,
-                              children: [
-                                SvgPicture.asset(
-                                  "assets/icons/star.svg",
-                                  width: 20,
-                                  height: 20,
-                                ),
-                                Text(
-                                  "4.5 ",
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                Text(
-                                  "(${widget.product["reviews"].length} reviews)",
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xff7D7A7A),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
+                      Text(
+                        "${widget.product["title"]}",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
-                      Text(
-                        "\$${widget.product["price"]}",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: primaryColor,
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            spacing: 4,
+                            children: [
+                              SvgPicture.asset(
+                                "assets/icons/star.svg",
+                                width: 20,
+                                height: 20,
+                              ),
+                              Text(
+                                "4.5 ",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              Text(
+                                "(${widget.product["reviews"].length} reviews)",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xff7D7A7A),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Text(
+                            "\$${widget.product["price"]}",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: primaryColor,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
