@@ -115,7 +115,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                 height: 20,
                               ),
                               Text(
-                                "4.5 ",
+                                "${widget.product["rating"]}",
                                 style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
