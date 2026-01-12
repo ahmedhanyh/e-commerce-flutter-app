@@ -1,4 +1,5 @@
 import 'package:final_flutter_project/features/search/view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -43,7 +44,6 @@ class HomeScreen extends StatelessWidget {
                             backgroundColor: Color(0xffD9D9D9),
                             backgroundImage: AssetImage(
                               "assets/images/profile_picture.png",
-
                             ),
                           ),
                           title: Text(
@@ -79,9 +79,13 @@ class HomeScreen extends StatelessWidget {
                       GestureDetector(
                         onTap: () {
                           Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) {
-                              return NavBar(selectedIndex: 1,);  // 1 is the SearchScreen index in NavBar
-                            })
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return NavBar(
+                                  selectedIndex: 1,
+                                ); // 1 is the SearchScreen index in NavBar
+                              },
+                            ),
                           );
                         },
                         child: TextFormField(
@@ -112,7 +116,50 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      DiscountOffer(),
+                      Column(
+                        spacing: 8,
+                        children: [
+                          DiscountOffer(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            spacing: 4,
+                            children: [
+                              Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                  color: Color(0xffB0AEAE),
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                              Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                  color: primaryColor,
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                              Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                  color: Color(0xffB0AEAE),
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                              Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                  color: Color(0xffB0AEAE),
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                       Column(
                         spacing: 8,
                         children: [
@@ -229,7 +276,6 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      // SizedBox(height: 12,)
                     ],
                   ),
                 ),
