@@ -47,159 +47,157 @@ class ProfileScreen extends StatelessWidget {
             backgroundColor: Colors.white,
             body: SafeArea(
               child: Padding(
-                padding: EdgeInsets.fromLTRB(0, 36, 0, 36),
-                child: Column(
-                  spacing: 40,
-                  children: [
-                    Column(
-                      spacing: 8,
-                      children: [
-                        CircleAvatar(
-                          radius: 50,
-                          backgroundColor: Color(0xffD9D9D9),
-                          backgroundImage: AssetImage(
-                            "assets/images/profile_picture.png",
+                padding: EdgeInsets.fromLTRB(0, 36, 0, 12),
+                child: SingleChildScrollView(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    spacing: 32,
+                    children: [
+                      Column(
+                        spacing: 8,
+                        children: [
+                          CircleAvatar(
+                            radius: 50,
+                            backgroundColor: Color(0xffD9D9D9),
+                            backgroundImage: AssetImage(
+                              "assets/images/profile_picture.png",
+                            ),
                           ),
-                        ),
-                        Text(
-                          "Ahmed Hany",
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
+                          Text(
+                            "Ahmed Hany",
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-                        child: ListView(
-                          children: [
-                            ListTile(
-                              leading: SvgPicture.asset(
-                                "assets/icons/profile.svg",
-                              ),
-                              title: Text(
-                                "Profile",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              trailing: SvgPicture.asset(
-                                "assets/icons/profile_arrow_forward.svg",
-                              ),
-                              tileColor: Color(0xffF8F7F7),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                            SizedBox(height: 16),
-                            ListTile(
-                              leading: SvgPicture.asset(
-                                "assets/icons/settings.svg",
-                              ),
-                              title: Text(
-                                "Settings",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              trailing: SvgPicture.asset(
-                                "assets/icons/profile_arrow_forward.svg",
-                              ),
-                              tileColor: Color(0xffF8F7F7),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                            SizedBox(height: 16),
-                            ListTile(
-                              leading: SvgPicture.asset(
-                                "assets/icons/contact.svg",
-                              ),
-                              title: Text(
-                                "Contact",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              trailing: SvgPicture.asset(
-                                "assets/icons/profile_arrow_forward.svg",
-                              ),
-                              tileColor: Color(0xffF8F7F7),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                            SizedBox(height: 16),
-                            ListTile(
-                              leading: SvgPicture.asset(
-                                "assets/icons/share_app.svg",
-                              ),
-                              title: Text(
-                                "Share App",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              trailing: SvgPicture.asset(
-                                "assets/icons/profile_arrow_forward.svg",
-                              ),
-                              tileColor: Color(0xffF8F7F7),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                            SizedBox(height: 16),
-                            ListTile(
-                              leading: SvgPicture.asset(
-                                "assets/icons/help.svg",
-                              ),
-                              title: Text(
-                                "Help",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              trailing: SvgPicture.asset(
-                                "assets/icons/profile_arrow_forward.svg",
-                              ),
-                              tileColor: Color(0xffF8F7F7),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                            SizedBox(height: 32),
-                            GestureDetector(
-                              onTap: () {
-                                cubit.logout();
-                              },
-                              child: Text(
-                                "Sign Out",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: Color(0xffF55F1F),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                        ],
                       ),
-                    ),
-                  ],
+                      Column(
+                        children: [
+                          ListTile(
+                            leading: SvgPicture.asset(
+                              "assets/icons/profile.svg",
+                            ),
+                            title: Text(
+                              "Profile",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                              ),
+                            ),
+                            trailing: SvgPicture.asset(
+                              "assets/icons/profile_arrow_forward.svg",
+                            ),
+                            tileColor: Color(0xffF8F7F7),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          SizedBox(height: 12),
+                          ListTile(
+                            leading: SvgPicture.asset(
+                              "assets/icons/settings.svg",
+                            ),
+                            title: Text(
+                              "Settings",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                              ),
+                            ),
+                            trailing: SvgPicture.asset(
+                              "assets/icons/profile_arrow_forward.svg",
+                            ),
+                            tileColor: Color(0xffF8F7F7),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          SizedBox(height: 12),
+                          ListTile(
+                            leading: SvgPicture.asset(
+                              "assets/icons/contact.svg",
+                            ),
+                            title: Text(
+                              "Contact",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                              ),
+                            ),
+                            trailing: SvgPicture.asset(
+                              "assets/icons/profile_arrow_forward.svg",
+                            ),
+                            tileColor: Color(0xffF8F7F7),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          SizedBox(height: 12),
+                          ListTile(
+                            leading: SvgPicture.asset(
+                              "assets/icons/share_app.svg",
+                            ),
+                            title: Text(
+                              "Share App",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                              ),
+                            ),
+                            trailing: SvgPicture.asset(
+                              "assets/icons/profile_arrow_forward.svg",
+                            ),
+                            tileColor: Color(0xffF8F7F7),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          SizedBox(height: 12),
+                          ListTile(
+                            leading: SvgPicture.asset(
+                              "assets/icons/help.svg",
+                            ),
+                            title: Text(
+                              "Help",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                              ),
+                            ),
+                            trailing: SvgPicture.asset(
+                              "assets/icons/profile_arrow_forward.svg",
+                            ),
+                            tileColor: Color(0xffF8F7F7),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          SizedBox(height: 32),
+                          GestureDetector(
+                            onTap: () {
+                              cubit.logout();
+                            },
+                            child: Text(
+                              "Sign Out",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xffF55F1F),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
