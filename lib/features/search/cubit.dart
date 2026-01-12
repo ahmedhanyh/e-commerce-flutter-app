@@ -11,7 +11,6 @@ class SearchCubit extends Cubit<SearchState> {
   void getResults() async {
     emit(GettingResults());
     final response = await DioHelper.getRequest(endPoint: "https://dummyjson.com/products/search?q=${searchController.text}");
-    print(response.data);
     emit(ResultsObtained(response.data["products"]));
   }
 }
