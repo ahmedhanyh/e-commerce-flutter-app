@@ -39,10 +39,12 @@ class _SearchScreenState extends State<SearchScreen> {
           return Scaffold(
             backgroundColor: Colors.white,
             appBar: AppBar(
+              automaticallyImplyLeading: false,
               backgroundColor: Colors.white,
               title: Container(
                 child: TextFormField(
                   controller: cubit.searchController,
+                  autofocus: true,
                   onFieldSubmitted: (value) {
                     cubit.getResults();
                   },

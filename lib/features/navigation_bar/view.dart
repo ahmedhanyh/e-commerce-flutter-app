@@ -5,7 +5,9 @@ import '../profile/view.dart';
 import '../search/view.dart';
 
 class NavBar extends StatefulWidget {
-  const NavBar({super.key});
+  const NavBar({super.key, this.selectedIndex = 0 });
+
+  final int selectedIndex;
 
   @override
   State<NavBar> createState() => _NavBarState();
@@ -13,6 +15,15 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   int selectedPageIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+
+    setState(() {
+      selectedPageIndex = widget.selectedIndex;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,18 +37,18 @@ class _NavBarState extends State<NavBar> {
         selectedIndex: selectedPageIndex,
         destinations: [
           NavigationDestination(icon: SvgPicture.asset("assets/icons/home.svg"), label: "Home"),
-          NavigationDestination(icon: SvgPicture.asset("assets/icons/home.svg"), label: "Home"),
+          NavigationDestination(icon: SvgPicture.asset("assets/icons/search.svg"), label: "Search"),
           NavigationDestination(
             icon: SvgPicture.asset("assets/icons/cart.svg"),
             label: "Cart",
           ),
           NavigationDestination(
             icon: SvgPicture.asset("assets/icons/profile.svg"),
-            label: "Account",
+            label: "Profile",
           ),
         ],
       ),
-      body: [HomeScreen(), HomeScreen(), SearchScreen(), ProfileScreen()][selectedPageIndex],
+      body: [HomeScreen(), SearchScreen(), SearchScreen(), ProfileScreen()][selectedPageIndex],
     );
   }
 }

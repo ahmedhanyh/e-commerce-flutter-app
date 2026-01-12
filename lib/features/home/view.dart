@@ -8,6 +8,7 @@ import 'package:final_flutter_project/features/home/state.dart';
 import 'package:final_flutter_project/features/widgets/discount_offer.dart';
 import 'package:final_flutter_project/features/widgets/product_item.dart';
 import '../category_item/view.dart';
+import '../navigation_bar/view.dart';
 import '../products/view.dart';
 import '../widgets/loading_screen.dart';
 
@@ -76,7 +77,7 @@ class HomeScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(builder: (context) {
-                              return SearchScreen();
+                              return NavBar(selectedIndex: 1,);  // 1 is the SearchScreen index in NavBar
                             })
                           );
                         },
