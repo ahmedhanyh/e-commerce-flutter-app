@@ -2,6 +2,7 @@ import 'package:final_flutter_project/features/login/view.dart';
 import 'package:final_flutter_project/features/navigation_bar/view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -45,13 +46,29 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         alignment: Alignment.bottomCenter,
         padding: EdgeInsets.fromLTRB(0, 0, 0, 48),
-        child: Text(
-          "Loading...",
-          style: TextStyle(
-            fontFamily: "Arimo",
-            fontSize: 24,
-            fontWeight: FontWeight.w700,
-            color: Colors.white,
+        child: Container(
+          height: 32,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Loading",
+                style: TextStyle(
+                  fontFamily: "Arimo",
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(width: 2,),
+              Padding(
+                padding: EdgeInsets.only(top: 10),
+                child: const SpinKitThreeBounce(
+                  color: Colors.white, // Change to your brand color
+                  size: 15.0,         // Control how big the dots are
+                ),
+              ),
+            ],
           ),
         ),
       ),
