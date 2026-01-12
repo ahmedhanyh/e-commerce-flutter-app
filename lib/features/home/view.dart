@@ -1,3 +1,4 @@
+import 'package:final_flutter_project/features/search/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -72,8 +73,15 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) {
+                              return SearchScreen();
+                            })
+                          );
+                        },
                         child: TextFormField(
+                          enabled: false,
                           decoration: InputDecoration(
                             fillColor: secondaryColor,
                             filled: true,
@@ -93,11 +101,7 @@ class HomeScreen extends StatelessWidget {
                               borderSide: BorderSide(color: secondaryColor),
                               borderRadius: BorderRadius.circular(30),
                             ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: secondaryColor),
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            focusedBorder: OutlineInputBorder(
+                            disabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: secondaryColor),
                               borderRadius: BorderRadius.circular(30),
                             ),
