@@ -33,7 +33,14 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       SafeArea(
                         child: ListTile(
-                          leading: CircleAvatar(radius: 25),
+                          leading: CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Color(0xffD9D9D9),
+                            backgroundImage: AssetImage(
+                              "assets/images/profile_picture.png",
+
+                            ),
+                          ),
                           title: Text(
                             "Hello!",
                             style: TextStyle(
@@ -64,27 +71,36 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      TextFormField(
-                        decoration: InputDecoration(
-                          fillColor: secondaryColor,
-                          filled: true,
-                          prefixIcon: Padding(
-                            padding: const EdgeInsets.all(16),
-                            child: SvgPicture.asset("assets/icons/search.svg"),
-                          ),
-                          hintText: "Search here",
-                          hintStyle: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xff9B9999),
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(color: secondaryColor),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: secondaryColor),
-                            borderRadius: BorderRadius.circular(30),
+                      GestureDetector(
+                        onTap: () {},
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            fillColor: secondaryColor,
+                            filled: true,
+                            prefixIcon: Padding(
+                              padding: const EdgeInsets.all(16),
+                              child: SvgPicture.asset(
+                                "assets/icons/search.svg",
+                              ),
+                            ),
+                            hintText: "Search here",
+                            hintStyle: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xff9B9999),
+                            ),
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(color: secondaryColor),
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: secondaryColor),
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: secondaryColor),
+                              borderRadius: BorderRadius.circular(30),
+                            ),
                           ),
                         ),
                       ),
@@ -107,10 +123,13 @@ class HomeScreen extends StatelessWidget {
                                 onTap: () {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
-                                        builder: (context) {
-                                          return ListScreen(title: "Products", items: state.products);
-                                        }
-                                    )
+                                      builder: (context) {
+                                        return ListScreen(
+                                          title: "Products",
+                                          items: state.products,
+                                        );
+                                      },
+                                    ),
                                   );
                                 },
                                 child: Text(
@@ -134,7 +153,10 @@ class HomeScreen extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 return Container(
                                   width: 180,
-                                  child: ProductItem(product: state.products[index], showAddBtn: false,),
+                                  child: ProductItem(
+                                    product: state.products[index],
+                                    showAddBtn: false,
+                                  ),
                                 );
                               },
                             ),
@@ -158,9 +180,15 @@ class HomeScreen extends StatelessWidget {
                               GestureDetector(
                                 onTap: () {
                                   Navigator.of(context).push(
-                                    MaterialPageRoute(builder: (context) {
-                                      return ListScreen(title: "Categories", items: state.categories, isCategories: true,);
-                                    })
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return ListScreen(
+                                          title: "Categories",
+                                          items: state.categories,
+                                          isCategories: true,
+                                        );
+                                      },
+                                    ),
                                   );
                                 },
                                 child: Text(
@@ -184,7 +212,9 @@ class HomeScreen extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 return Container(
                                   width: 180,
-                                  child: CategoryItem(category: state.categories[index]),
+                                  child: CategoryItem(
+                                    category: state.categories[index],
+                                  ),
                                 );
                               },
                             ),

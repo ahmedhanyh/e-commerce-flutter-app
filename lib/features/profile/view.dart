@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:final_flutter_project/features/login/view.dart';
 import 'package:final_flutter_project/features/profile/cubit.dart';
 import 'package:final_flutter_project/features/profile/state.dart';
@@ -57,6 +56,7 @@ class ProfileScreen extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: 50,
+                          backgroundColor: Color(0xffD9D9D9),
                           backgroundImage: AssetImage(
                             "assets/images/profile_picture.png",
                           ),
@@ -180,20 +180,22 @@ class ProfileScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
+                            SizedBox(height: 32),
+                            GestureDetector(
+                              onTap: () {
+                                cubit.logout();
+                              },
+                              child: Text(
+                                "Sign Out",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xffF55F1F),
+                                ),
+                              ),
+                            ),
                           ],
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        cubit.logout();
-                      },
-                      child: Text(
-                        "Sign Out",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xffF55F1F),
                         ),
                       ),
                     ),
