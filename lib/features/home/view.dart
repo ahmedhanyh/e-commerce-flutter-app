@@ -35,6 +35,9 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       SafeArea(
                         child: ListTile(
+                          contentPadding: EdgeInsets.all(0),
+                          horizontalTitleGap: 8,
+                          dense: true,
                           leading: CircleAvatar(
                             radius: 25,
                             backgroundColor: Color(0xffD9D9D9),
