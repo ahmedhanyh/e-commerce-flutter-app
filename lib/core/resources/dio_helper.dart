@@ -1,3 +1,5 @@
+// ignore_for_file: strict_top_level_inference
+
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
@@ -19,27 +21,6 @@ class DioHelper {
   static getRequest({required String endPoint}) async {
     try {
       Response response = await dio!.get(endPoint);
-      return response;
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  static putRequest({required String endPoint}) async {
-    try {
-      Response response = await dio!.put(endPoint);
-      return response;
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  static postRequest({
-    required String endPoint,
-    Map<String, dynamic>? data,
-  }) async {
-    try {
-      Response response = await dio!.post(endPoint, data: data);
       return response;
     } catch (e) {
       rethrow;
