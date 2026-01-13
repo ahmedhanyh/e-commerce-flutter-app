@@ -35,37 +35,42 @@ class _CategoryGridItemState extends State<CategoryItem> {
         },
         builder: (context, state) {
           final cubit = context.read<CategoryItemCubit>();
-          return GestureDetector(
-            onTap: () {
-              cubit.getCategoryProducts(widget.category["url"]);
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xffF8F7F7),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Column(
-                spacing: 8,
-                children: [
-                  Container(
-                    height: 120,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(10),
-                      ),
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: NetworkImage(
-                          "https://loremflickr.com/320/240/${widget.category["slug"]}",
+          return Material(
+            color: Color(0xffF8F7F7),
+            borderRadius: BorderRadius.circular(12),
+            child: InkWell(
+              onTap: () {
+                cubit.getCategoryProducts(widget.category["url"]);
+              },
+              highlightColor: Colors.grey.shade300,
+              splashColor: Colors.grey.shade400,
+              borderRadius: BorderRadius.circular(12),
+              child: Container(
+                child: Column(
+                  spacing: 8,
+                  children: [
+                    Container(
+                      height: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.vertical(
+                          top: Radius.circular(10),
+                        ),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(
+                            "https://picsum.photos/320/240"
+                            // "https://loremflickr.com/320/240/${widget.category["slug"]}",
+                            // "https://source.unsplash.com/featured/?${widget.category["slug"]}"
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Text(
-                    "${widget.category["name"]}",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-                  ),
-                ],
+                    Text(
+                      "${widget.category["name"]}",
+                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                    ),
+                  ],
+                ),
               ),
             ),
           );

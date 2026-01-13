@@ -34,7 +34,7 @@ class _NavBarState extends State<NavBar> {
         backgroundColor: secondaryColor,
         indicatorColor: Colors.transparent,
         overlayColor: WidgetStatePropertyAll(
-          Colors.transparent
+          Colors.grey.shade300
         ),
         onDestinationSelected: (int index) {
           setState(() {
